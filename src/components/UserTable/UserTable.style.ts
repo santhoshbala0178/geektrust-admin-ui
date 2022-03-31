@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const UserTableContainer = styled.table`
   border-collapse: collapse;
-  min-height: 600px;
   table-layout: fixed;
   width: 100%;
 `;
@@ -14,7 +13,6 @@ export const Header = styled.th`
 
 export const HeaderRow = styled.tr`
   border-bottom: 0.5px solid ${(props) => props.theme.colors.grey};
-  min-width: 100px;
 `;
 
 export const DataRow = styled.tr<{ rowHighlight: boolean }>`
@@ -29,4 +27,6 @@ export const DataRow = styled.tr<{ rowHighlight: boolean }>`
   }
 `;
 
-export const RowText = styled.td``;
+export const RowText = styled.td`
+  padding: 1em 0em;
+`;

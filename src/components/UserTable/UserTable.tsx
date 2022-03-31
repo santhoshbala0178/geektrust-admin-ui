@@ -3,6 +3,7 @@ import { connect, ConnectedProps } from "react-redux";
 import { HEADER_COLUMNS, MAX_USER_COUNT } from "../../constants/constants";
 import { RootState } from "../../store";
 import HeaderText from "../HeaderText";
+import SelectAllUser from "../SelectAllUser";
 import SelectUser from "../SelectUser";
 import TextContainer from "../TextContainer";
 import {
@@ -33,7 +34,7 @@ const UserTable = ({
       <thead>
         <HeaderRow>
           <Header>
-            <SelectUser id="all" />
+            <SelectAllUser />
           </Header>
           {HEADER_COLUMNS.map((column) => {
             return (
@@ -45,8 +46,8 @@ const UserTable = ({
         </HeaderRow>
       </thead>
       <tbody>
-        {userDetailsReducer && // Depending on the page number display the users
-          userDetailsReducer
+        {userDetailsReducer.users && // Depending on the page number display the users
+          userDetailsReducer.users
             .slice(pageDetailsReducer.startIndex, pageDetailsReducer.endIndex)
             .map((row) => {
               return (

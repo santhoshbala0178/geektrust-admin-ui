@@ -7,11 +7,15 @@ export type UserDetails = {
   role: ROLE_TYPES.ADMIN_ROLE | ROLE_TYPES.MEMBER_ROLE;
 };
 
+export type UserDetailsType = {
+  users: UserDetails[];
+};
+
 export type userDetailsReducerType = {
   type: string;
   payload: {
     newData?: UserDetails[];
     modifiedData?: string[];
-    indexToDelete?: number[];
+    indicesToDelete?: string[];
   };
 };

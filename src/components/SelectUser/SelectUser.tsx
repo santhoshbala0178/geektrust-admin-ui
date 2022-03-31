@@ -11,8 +11,6 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = (state: RootState) => ({
-  userDetailsReducer: state.userDetailsReducer,
-  pageDetailsReducer: state.pageDetailsReducer,
   userDeleteReducer: state.userDeleteReducer,
 });
 
@@ -22,33 +20,15 @@ type Props = ConnectedProps<typeof connector> & SelectUserType;
 
 const SelectUser = ({
   id,
-  userDetailsReducer,
-  pageDetailsReducer,
   userDeleteReducer,
   addIndicesProp,
   removeIndicesProp,
 }: Props) => {
-  const getIndices = () => {
-    let indices: string[] = [];
-    userDetailsReducer
-      .slice(pageDetailsReducer.startIndex, pageDetailsReducer.endIndex)
-      .map((user) => indices.push(user.id));
-    return indices;
-  };
-
   const onUserSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      if (id === "all") {
-        addIndicesProp(getIndices());
-      } else {
-        addIndicesProp([id]);
-      }
+      addIndicesProp([id]);
     } else {
-      if (id === "all") {
-        removeIndicesProp(getIndices());
-      } else {
-        removeIndicesProp([id]);
-      }
+      removeIndicesProp([id]);
     }
   };
   return (

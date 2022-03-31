@@ -8,6 +8,13 @@ export const setUsers = (users: UserDetails[]) => ({
   },
 });
 
+export const deleteUsers = (indicesToDelete: string[]) => ({
+  type: types.DELETE_USERS,
+  payload: {
+    indicesToDelete,
+  },
+});
+
 export const setTotalPages = (value: number) => ({
   type: types.SET_TOTAL_PAGE_NUMBER,
   value,
@@ -26,4 +33,18 @@ export const addIndices = (indices: string[]) => ({
 export const removeIndices = (indices: string[]) => ({
   type: types.REMOVE_INDICES,
   indices,
+});
+
+export const selectPage = (idx: number) => ({
+  type: types.SELECT_PAGE,
+  pageNo: idx,
+});
+
+export const unselectPage = (idx: number) => ({
+  type: types.UNSELECT_PAGE,
+  pageNo: idx,
+});
+
+export const resetPages = () => ({
+  type: types.RESET_PAGES,
 });

@@ -23,6 +23,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state: RootState) => ({
   pageDetailsReducer: state.pageDetailsReducer,
+  userDetailsReducer: state.userDetailsReducer,
 });
 
 const connector = connect(mapStateToProps, mapDispatchToProps);
@@ -31,6 +32,7 @@ type Props = ConnectedProps<typeof connector>;
 
 const HomePage = ({
   pageDetailsReducer,
+  userDetailsReducer,
   setUsersProp,
   setTotalPagesProp,
 }: Props) => {
@@ -42,7 +44,12 @@ const HomePage = ({
     };
 
     getData();
-  }, []);
+  }, [setTotalPagesProp, setUsersProp]);
+
+  useEffect(() => {
+    console.log(userDetailsReducer.users.length);
+    setTotalPagesProp(userDetailsReducer.users.length);
+  }, [userDetailsReducer.users.length, setTotalPagesProp]);
 
   return (
     <HomePageContainer>
