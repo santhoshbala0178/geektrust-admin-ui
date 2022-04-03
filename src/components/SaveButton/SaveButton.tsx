@@ -24,7 +24,6 @@ const SaveButton = ({
   editUserProp,
 }: Props) => {
   const onSaveUser = () => {
-    console.log(userEditReducer);
     modifyUserDataProp({
       ...userEditReducer,
     });
