@@ -5,10 +5,10 @@ export const EditUserButton = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
-  background: ${(props) => props.theme.colors.background};
+  background: ${(props) => props.theme.colors.white};
 
   &: hover {
     background: ${(props) => props.theme.colors.blue};
-    color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.white};
   }
 `;

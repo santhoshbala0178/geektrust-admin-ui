@@ -5,11 +5,9 @@ export const PageNumberButton = styled("button")<{ isSelected: boolean }>`
   outline: none;
   border: 1px solid ${(props) => props.theme.colors.blue};
   background: ${(props) =>
-    props.isSelected ? props.theme.colors.blue : props.theme.colors.background};
+    props.isSelected ? props.theme.colors.blue : props.theme.colors.white};
   color: ${(props) =>
-    props.isSelected
-      ? props.theme.colors.background
-      : props.theme.colors.black};
+    props.isSelected ? props.theme.colors.white : props.theme.colors.black};
   border-radius: 50%;
   width: 10px;
   height: 10px;
@@ -20,7 +18,7 @@ export const PageNumberButton = styled("button")<{ isSelected: boolean }>`
 
   &: hover {
     background: ${(props) => props.theme.colors.blue};
-    color: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.white};
   }
 
   &: disabled {

@@ -17,8 +17,3 @@ export const enum PAGE_NUM_TYPES {
 export const HEADER_COLUMNS = ["Name", "Email", "Role", "Actions"];
 
 export const MAX_USER_COUNT = 10;
-
-export const capitalizeString = (value: string) => {
-  //Capitalize the First letter in a string
-  return `${value.slice(0, 1).toUpperCase()}${value.slice(1)}`;
-};

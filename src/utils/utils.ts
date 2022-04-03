@@ -6,3 +6,8 @@ export const getUserData = async () => {
 
   return data;
 };
+
+export const capitalizeString = (value: string) => {
+  //Capitalize the First letter in a string
+  return `${value.slice(0, 1).toUpperCase()}${value.slice(1)}`;
+};

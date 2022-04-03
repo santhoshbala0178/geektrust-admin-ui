@@ -36,6 +36,8 @@ const UserTable = ({
   userDeleteReducer,
   userEditReducer,
 }: Props) => {
+  console.log("hi");
+
   return (
     <UserTableContainer>
       <thead>

@@ -2,12 +2,9 @@ import React from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { saveEditedData, saveEditedRole } from "../../actions";
 import { EDIT_EMAIL, EDIT_NAME } from "../../constants/actionTypes";
-import {
-  capitalizeString,
-  HEADER_COLUMNS,
-  ROLE_TYPES,
-} from "../../constants/constants";
+import { HEADER_COLUMNS, ROLE_TYPES } from "../../constants/constants";
 import { RootState } from "../../store";
+import { capitalizeString } from "../../utils/utils";
 import { RoleDropDown, TextInput } from "./TextEditor.style";
 import { TextEditorType } from "./TextEditor.type";
 
@@ -47,6 +44,7 @@ const TextEditor = ({
   };
 
   if (type === HEADER_COLUMNS[2].toLowerCase()) {
+    // Dropdown for role
     return (
       <td>
         <RoleDropDown defaultValue={value} onChange={onRoleChange}>
@@ -62,6 +60,7 @@ const TextEditor = ({
   }
 
   return (
+    // Text input for name & email
     <td>
       <TextInput
         autoFocus={type === HEADER_COLUMNS[0].toLowerCase()}

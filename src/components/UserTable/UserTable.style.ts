@@ -20,9 +20,7 @@ export const HeaderRow = styled.tr`
 export const DataRow = styled.tr<{ rowHighlight: boolean }>`
   border-bottom: 0.5px solid ${(props) => props.theme.colors.grey};
   background: ${(props) =>
-    props.rowHighlight
-      ? props.theme.colors.grey
-      : props.theme.colors.background};
+    props.rowHighlight ? props.theme.colors.grey : props.theme.colors.white};
   &: hover {
     background: ${(props) => props.theme.colors.grey};
   }

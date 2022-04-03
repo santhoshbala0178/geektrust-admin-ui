@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect, ConnectedProps } from "react-redux";
-import { getUserData } from "../../utils/apiUtils";
+import { getUserData } from "../../utils/utils";
 import SearchBar from "../../components/SearchBar";
 import UserTable from "../../components/UserTable";
 import { setTotalPages, setUsers } from "../../actions";
