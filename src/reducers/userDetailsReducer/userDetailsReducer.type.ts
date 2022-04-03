@@ -7,15 +7,19 @@ export type UserDetails = {
   role: ROLE_TYPES.ADMIN_ROLE | ROLE_TYPES.MEMBER_ROLE;
 };
 
+export type UserDetailsWithDisplay = UserDetails & {
+  display: boolean;
+};
 export type UserDetailsType = {
-  users: UserDetails[];
+  users: UserDetailsWithDisplay[];
 };
 
 export type userDetailsReducerType = {
   type: string;
   payload: {
-    newData?: UserDetails[];
-    modifiedData?: string[];
+    newData?: UserDetailsWithDisplay[];
+    modifiedData?: Partial<UserDetails>;
     indicesToDelete?: string[];
+    filterValue?: string;
   };
 };

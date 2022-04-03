@@ -1,6 +1,11 @@
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
-import { deleteUsers, resetPages, unselectPage } from "../../actions";
+import {
+  deleteUsers,
+  resetPages,
+  setCurrentPage,
+  unselectPage,
+} from "../../actions";
 import { RootState } from "../../store";
 import { Delete } from "./DeleteButton.style";
 
@@ -13,6 +18,7 @@ const mapDispatchToProps = {
   deleteUsersProp: deleteUsers,
   unselectPageProp: unselectPage,
   resetPagesProp: resetPages,
+  setCurrentPageProp: setCurrentPage,
 };
 
 const connector = connect(mapStateToProps, mapDispatchToProps);
@@ -25,11 +31,13 @@ const DeleteButton = ({
   deleteUsersProp,
   unselectPageProp,
   resetPagesProp,
+  setCurrentPageProp,
 }: Props) => {
   const onDeleteUsers = () => {
     deleteUsersProp(userDeleteReducer.indicesToDelete);
     unselectPageProp(pageDetailsReducer.curPageNum);
     resetPagesProp();
+    setCurrentPageProp(1);
   };
   return (
     <Delete

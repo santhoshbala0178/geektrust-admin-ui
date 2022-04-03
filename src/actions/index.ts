@@ -1,4 +1,7 @@
+import { Dispatch } from "react";
+import { Action } from "redux";
 import * as types from "../constants/actionTypes";
+import { ROLE_TYPES } from "../constants/constants";
 import { UserDetails } from "../reducers/userDetailsReducer/userDetailsReducer.type";
 
 export const setUsers = (users: UserDetails[]) => ({
@@ -12,6 +15,51 @@ export const deleteUsers = (indicesToDelete: string[]) => ({
   type: types.DELETE_USERS,
   payload: {
     indicesToDelete,
+  },
+});
+
+export const saveEditedData = (type: string, value: string) => ({
+  type,
+  payload: {
+    value,
+  },
+});
+
+export const saveEditedRole = (role: ROLE_TYPES) => ({
+  type: types.EDIT_ROLE,
+  payload: {
+    role,
+  },
+});
+
+export const editUser = (payload: UserDetails) => ({
+  type: types.EDIT_USER,
+  payload: {
+    user: payload,
+  },
+});
+
+export const modifyUserData = (payload: Partial<UserDetails>) => ({
+  type: types.MODIFY_USER_DATA,
+  payload: {
+    modifiedData: payload,
+  },
+});
+
+export const filterAndSetPage =
+  (filterValue: string) => (dispatch: Dispatch<Action>, getState: any) => {
+    dispatch(filterUsers(filterValue));
+    const numOfUsers = getState().userDetailsReducer.users.filter(
+      (user: any) => user.display
+    ).length;
+    dispatch(setTotalPages(numOfUsers)); // Set number of users based on search text
+    dispatch(setCurrentPage(1)); // Reset the page number to first page
+  };
+
+export const filterUsers = (filterValue: string) => ({
+  type: types.FILTER_USERS,
+  payload: {
+    filterValue,
   },
 });
 

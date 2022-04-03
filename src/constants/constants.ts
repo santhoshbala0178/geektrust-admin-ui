@@ -1,7 +1,7 @@
 export const USERS_API =
   "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json";
 
-export const enum ROLE_TYPES {
+export enum ROLE_TYPES {
   ADMIN_ROLE = "admin",
   MEMBER_ROLE = "member",
 }
@@ -17,3 +17,8 @@ export const enum PAGE_NUM_TYPES {
 export const HEADER_COLUMNS = ["Name", "Email", "Role", "Actions"];
 
 export const MAX_USER_COUNT = 10;
+
+export const capitalizeString = (value: string) => {
+  //Capitalize the First letter in a string
+  return `${value.slice(0, 1).toUpperCase()}${value.slice(1)}`;
+};

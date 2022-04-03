@@ -1,4 +1,5 @@
 export type TextContainerType = {
-  name: string;
+  type: string;
   value: string;
+  id: string;
 };

@@ -47,7 +47,7 @@ const HomePage = ({
   }, [setTotalPagesProp, setUsersProp]);
 
   useEffect(() => {
-    console.log(userDetailsReducer.users.length);
+    // Set Total Pages if the users are deleted
     setTotalPagesProp(userDetailsReducer.users.length);
   }, [userDetailsReducer.users.length, setTotalPagesProp]);
 

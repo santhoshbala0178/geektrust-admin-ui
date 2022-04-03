@@ -1,14 +1,31 @@
 import React from "react";
-import { HEADER_COLUMNS } from "../../constants/constants";
+import { connect, ConnectedProps } from "react-redux";
+import { capitalizeString, HEADER_COLUMNS } from "../../constants/constants";
+import { RootState } from "../../store";
+import TextEditor from "../TextEditor";
 import { Text } from "./TextContainer.style";
 import { TextContainerType } from "./TextContainer.type";
 
-const TextContainer = ({ name, value }: TextContainerType) => (
-  <Text>
-    {name === HEADER_COLUMNS[2].toLowerCase()
-      ? `${value.slice(0, 1).toUpperCase()}${value.slice(1)}`
-      : value}
-  </Text>
-);
+const mapStateToProps = (state: RootState) => ({
+  userEditReducer: state.userEditReducer,
+});
 
-export default TextContainer;
+const connector = connect(mapStateToProps);
+
+type Props = ConnectedProps<typeof connector> & TextContainerType;
+
+const TextContainer = ({ type, value, id, userEditReducer }: Props) => {
+  if (userEditReducer.id === id) {
+    return <TextEditor type={type} value={value} />;
+  }
+
+  return (
+    <Text>
+      {type === HEADER_COLUMNS[2].toLowerCase()
+        ? capitalizeString(value)
+        : value}
+    </Text>
+  );
+};
+
+export default connector(TextContainer);

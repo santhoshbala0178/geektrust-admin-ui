@@ -1,8 +1,11 @@
 export const ADD_USERS = "ADD_USERS";
+export const MODIFY_USER_DATA = "MODIFY_USER_DATA";
 export const EDIT_NAME = "EDIT_NAME";
 export const EDIT_EMAIL = "EDIT_EMAIL";
 export const EDIT_ROLE = "EDIT_ROLE";
 export const DELETE_USERS = "DELETE_USERS";
+export const EDIT_USER = "EDIT_USER";
+export const FILTER_USERS = "FILTER_USERS";
 export const SET_TOTAL_PAGE_NUMBER = "SET_TOTAL_PAGE_NUMBER";
 export const SET_CURRENT_PAGE_NUMBER = "SET_CURRENT_PAGE_NUMBER";
 export const ADD_INDICES = "ADD_INDICES";
