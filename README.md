@@ -4,7 +4,7 @@ This project is a an implementation of Admin UI Challege by Geektrust
 
 ## Site Link
 
--
+- https://stalwart-youtiao-45a5f2.netlify.app/
 
 ## Commands to execute
 
