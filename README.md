@@ -1,10 +1,10 @@
-# Finding Falcone AI Project
+# Admin UI Project
 
-This project is a an implementation of Finding Falcone AI Challege by Geektrust
+This project is a an implementation of Admin UI Challege by Geektrust
 
 ## Site Link
 
-- https://curious-marzipan-78eb8b.netlify.app/
+-
 
 ## Commands to execute
 
@@ -21,18 +21,17 @@ This project is a an implementation of Finding Falcone AI Challege by Geektrust
 
 ## Major Components
 
-- Header
-- Footer
-- Main Page
-- Result Page
+- User Table
+- Search User
+- Delete User
+- Edit User
+- Pagination
+- Delete Selected
 
 ## Features
 
-- User can select 4 different planets to search in
-- User can select a vehicle for each planet and the vehicle count, available vehicle and total time taken are updated dynamically
-- Once 4 planets and vehicles are selected, Find button would be displayed
-- User can click on Find button to start the search
-- Final Result will be displayed in different page
-- User can reset the selections completely
-- User can navigate to GeekTrust Home page
-- Color Theme through a single file Theme.ts, we can modify the theme for entire website
+- 10 users are displayed in each page
+- User can be searched by Name, Email, Role
+- User Name, Email & Role can be edited and saved
+- Selected Users or All users in a page can be deleted
+- Pagination for navigating between any pages
