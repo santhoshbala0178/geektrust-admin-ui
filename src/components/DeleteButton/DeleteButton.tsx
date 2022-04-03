@@ -44,6 +44,7 @@ const DeleteButton = ({
       type="button"
       disabled={userDeleteReducer.indicesToDelete.length === 0}
       onClick={onDeleteUsers}
+      data-testid="delete-selected"
     >
       {"Delete Selected"}
     </Delete>

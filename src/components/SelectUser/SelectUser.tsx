@@ -34,6 +34,7 @@ const SelectUser = ({
   return (
     <SelectUserInput
       type="checkbox"
+      data-testid="select-user"
       onChange={onUserSelect}
       checked={userDeleteReducer.indicesToDelete.includes(id)}
     />

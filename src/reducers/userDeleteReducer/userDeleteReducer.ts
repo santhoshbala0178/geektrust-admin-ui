@@ -48,7 +48,7 @@ export const userDeleteReducer = (
       }
       return state;
     case RESET_PAGES:
-      return { ...state, pageSelected: [] };
+      return { ...state, pageSelected: [], indicesToDelete: [] };
     default:
       return state;
   }

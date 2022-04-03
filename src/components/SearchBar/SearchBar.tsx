@@ -18,6 +18,7 @@ const SearchBar = ({ filterAndSetPageProp }: Props) => {
 
   return (
     <SearchBarInput
+      data-testid="search-input"
       placeholder="Search by name, email or role"
       onChange={filterUsers}
     />

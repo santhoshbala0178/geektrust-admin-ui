@@ -21,7 +21,11 @@ const DeleteUser = ({ deleteUsersProp, resetPagesProp, id }: Props) => {
     resetPagesProp();
   };
   return (
-    <DeleteUserIcon type="button" onClick={onDeleteUsers}>
+    <DeleteUserIcon
+      type="button"
+      onClick={onDeleteUsers}
+      data-testid="delete-user"
+    >
       <FontAwesomeIcon icon={faTrashCan} />
     </DeleteUserIcon>
   );

@@ -55,6 +55,7 @@ const SelectAllUser = ({
   return (
     <SelectAllUserInput
       type="checkbox"
+      data-testid="select-all"
       onChange={onUserSelect}
       checked={userDeleteReducer.pageSelected.includes(
         // If the current page is selected then the check box should be in checked state

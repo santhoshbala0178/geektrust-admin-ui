@@ -17,3 +17,24 @@ export const enum PAGE_NUM_TYPES {
 export const HEADER_COLUMNS = ["Name", "Email", "Role", "Actions"];
 
 export const MAX_USER_COUNT = 10;
+
+export const MOCK_USERS = [
+  {
+    name: "Mock1",
+    email: "mock1@gmail.com",
+    role: "admin",
+    id: "1",
+  },
+  {
+    name: "Mock2",
+    email: "mock2@gmail.com",
+    role: "member",
+    id: "2",
+  },
+  {
+    name: "Mock3",
+    email: "mock3@gmail.com",
+    role: "admin",
+    id: "3",
+  },
+];

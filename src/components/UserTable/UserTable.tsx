@@ -36,8 +36,6 @@ const UserTable = ({
   userDeleteReducer,
   userEditReducer,
 }: Props) => {
-  console.log("hi");
-
   return (
     <UserTableContainer>
       <thead>
@@ -54,7 +52,7 @@ const UserTable = ({
           })}
         </HeaderRow>
       </thead>
-      <TableBody>
+      <TableBody data-testid="user-table">
         {userDetailsReducer.users && // Depending on the page number display the users
           userDetailsReducer.users
             .filter((user) => user.display)
@@ -62,6 +60,7 @@ const UserTable = ({
             .map((row) => {
               return (
                 <DataRow
+                  data-testid="user-row"
                   key={`row-${row.id}`}
                   rowHighlight={userDeleteReducer.indicesToDelete.includes(
                     row.id
